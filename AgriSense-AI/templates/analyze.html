@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSense AI - Analyze Crop</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/">🏠 Home</a>
+        <a href="/analyze">🌱 Analyze</a>
+        <a href="/dashboard">📊 Dashboard</a>
+        <a href="/history">📜 History</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>🌱 Crop Analysis Form</h1>
+
+        <form action="/submit" method="POST">
+
+            <label>👨‍🌾 Farmer Name</label>
+            <input type="text" name="farmerName" required>
+
+            <label>🌾 Crop Name</label>
+            <input type="text" name="cropName" required>
+
+            <label>📝 Problem Description</label>
+            <textarea name="problemDescription" rows="5" required></textarea>
+
+            <label>🌐 Select Language</label>
+            <select name="language" required>
+                <option value="English">English</option>
+                <option value="Tamil">Tamil</option>
+                <option value="Hindi">Hindi</option>
+                <option value="Telugu">Telugu</option>
+                <option value="Malayalam">Malayalam</option>
+            </select>
+
+            <button type="submit">🤖 Analyze Crop</button>
+
+        </form>
+
+        <div class="button-group">
+            <a href="/"><button type="button">🏠 Home</button></a>
+            <a href="/dashboard"><button type="button">📊 Dashboard</button></a>
+            <a href="/history"><button type="button">📜 History</button></a>
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>

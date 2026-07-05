@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            margin:30px;
+        }
+
+        h1{
+            text-align:center;
+            color:green;
+        }
+
+        .container{
+            display:flex;
+            gap:20px;
+            justify-content:center;
+            margin-top:30px;
+        }
+
+        .card{
+            background:white;
+            padding:20px;
+            width:250px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.2);
+            text-align:center;
+        }
+
+        table{
+            width:90%;
+            margin:auto;
+            margin-top:40px;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:12px;
+            text-align:center;
+        }
+
+        th{
+            background:green;
+            color:white;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+            background:green;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+
+        .back{
+            text-align:center;
+            margin-top:30px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>📊 Agriculture Dashboard</h1>
+
+<div class="container">
+
+<div class="card">
+<h2>Total Queries</h2>
+<h1>{{ total_queries }}</h1>
+</div>
+
+<div class="card">
+<h2>Most Searched Crop</h2>
+<h1>{{ most_crop }}</h1>
+</div>
+
+<div class="card">
+<h2>Languages Used</h2>
+<h1>{{ total_languages }}</h1>
+</div>
+
+</div>
+
+<h2 style="text-align:center;margin-top:40px;">Recent Queries</h2>
+
+<table>
+
+<tr>
+<th>Farmer</th>
+<th>Crop</th>
+<th>Language</th>
+</tr>
+
+{% for item in recent_queries %}
+<tr>
+<td>{{ item.farmer_name }}</td>
+<td>{{ item.crop_name }}</td>
+<td>{{ item.language }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+<div class="back">
+<a href="/">Back to Home</a>
+</div>
+
+</body>
+</html>

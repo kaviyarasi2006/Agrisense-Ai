@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSense AI - Analysis Result</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="/">🏠 Home</a>
+        <a href="/analyze">🌱 Analyze</a>
+        <a href="/dashboard">📊 Dashboard</a>
+        <a href="/history">📜 History</a>
+    </nav>
+
+    <div class="container">
+
+        <h1>🤖 Crop Analysis Result</h1>
+
+        <div class="result-box">
+            <h3>👨‍🌾 Farmer Name</h3>
+            <p>{{ farmer_name }}</p>
+        </div>
+
+        <div class="result-box">
+            <h3>🌾 Crop Name</h3>
+            <p>{{ crop_name }}</p>
+        </div>
+
+        <div class="result-box">
+            <h3>📝 Problem Description</h3>
+            <p>{{ problem }}</p>
+        </div>
+
+        <div class="result-box">
+            <h3>💡 AI Recommendation</h3>
+            <p>{{ solution }}</p>
+        </div>
+
+        <div class="button-group">
+
+            <a href="/analyze"><button type="button">🌱 Analyze Again</button></a>
+
+            <a href="/dashboard"><button type="button">📊 Dashboard</button></a>
+
+            <a href="/history"><button type="button">📜 History</button></a>
+
+            <a href="/"><button type="button">🏠 Home</button></a>
+
+        </div>
+
+        <footer>
+            <hr>
+            <p><b>AgriSense AI</b></p>
+            <p>AI-Powered Smart Agriculture Assistant</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

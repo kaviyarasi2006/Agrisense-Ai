@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>History</title>
+    <style>
+        body{
+            font-family: Arial, sans-serif;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        h2{
+            text-align:center;
+            color:green;
+        }
+
+        table{
+            width:100%;
+            border-collapse:collapse;
+            background:white;
+        }
+
+        th,td{
+            border:1px solid #ddd;
+            padding:12px;
+            text-align:left;
+        }
+
+        th{
+            background:green;
+            color:white;
+        }
+
+        tr:nth-child(even){
+            background:#f2f2f2;
+        }
+
+        a{
+            text-decoration:none;
+            color:white;
+            background:green;
+            padding:10px 20px;
+            border-radius:5px;
+        }
+
+        .btn{
+            margin-bottom:20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Farmer Query History</h2>
+
+<div class="btn">
+    <a href="/">Home</a>
+</div>
+
+<table>
+
+<tr>
+    <th>Farmer Name</th>
+    <th>Crop</th>
+    <th>Problem</th>
+    <th>Language</th>
+    <th>AI Solution</th>
+</tr>
+
+{% for item in data %}
+<tr>
+    <td>{{ item.farmer_name }}</td>
+    <td>{{ item.crop_name }}</td>
+    <td>{{ item.problem }}</td>
+    <td>{{ item.language }}</td>
+    <td>{{ item.solution }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+</body>
+</html>
